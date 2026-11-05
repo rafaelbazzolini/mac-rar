@@ -10,7 +10,7 @@ cask "mac-rar" do
   desc "Native archive extractor and creator for macOS"
   homepage "https://github.com/rafaelbazzolini/mac-rar"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "MacRar.app"
 
