@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">MacRar: extrair, compactar e automatizar</title>
+  <desc id="desc">Diagrama ilustrativo de três fluxos: extração de RAR, ZIP e 7z; criação de ZIP, 7z e TAR; extração automática pelo Finder.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#191b20"/><stop offset="1" stop-color="#101115"/></linearGradient>
+    <linearGradient id="orange" x2="1" y2="1"><stop stop-color="#ffb34e"/><stop offset="1" stop-color="#ff7b16"/></linearGradient>
+  </defs>
+  <rect width="1200" height="480" rx="28" fill="url(#bg)"/>
+  <text x="48" y="62" fill="#fff" font-family="system-ui,-apple-system,sans-serif" font-size="30" font-weight="700">Seus arquivos. Do seu jeito.</text>
+  <text x="48" y="94" fill="#9fa4af" font-family="system-ui,-apple-system,sans-serif" font-size="16">Processamento local • Interface nativa • Apple Silicon e Intel</text>
+  <g font-family="system-ui,-apple-system,sans-serif">
+    <g transform="translate(48,128)">
+      <rect width="352" height="302" rx="20" fill="#25272e" stroke="#383b45"/>
+      <rect x="24" y="24" width="52" height="52" rx="14" fill="url(#orange)"/>
+      <path d="M50 35v27m-9-9 9 9 9-9M37 67h26" fill="none" stroke="#231a12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="24" y="116" fill="#fff" font-size="25" font-weight="700">Extrair</text>
+      <text x="24" y="148" fill="#b9bdc8" font-size="16">RAR, ZIP, 7z e TAR</text>
+      <text x="24" y="191" fill="#e1e3e8" font-size="16">Uma pasta para cada arquivo</text>
+      <text x="24" y="219" fill="#e1e3e8" font-size="16">ou Extrair aqui, sem camada extra.</text>
+      <rect x="24" y="250" width="154" height="28" rx="14" fill="#3d3022"/><text x="39" y="269" fill="#ffbd78" font-size="13">Arquivos preservados</text>
+    </g>
+    <g transform="translate(424,128)">
+      <rect width="352" height="302" rx="20" fill="#25272e" stroke="#383b45"/>
+      <rect x="24" y="24" width="52" height="52" rx="14" fill="url(#orange)"/>
+      <path d="M50 65V38m-9 9 9-9 9 9M37 67h26" fill="none" stroke="#231a12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="24" y="116" fill="#fff" font-size="25" font-weight="700">Compactar</text>
+      <text x="24" y="148" fill="#b9bdc8" font-size="16">ZIP, 7z e variantes de TAR</text>
+      <text x="24" y="191" fill="#e1e3e8" font-size="16">Senha AES-256 em ZIP.</text>
+      <text x="24" y="219" fill="#e1e3e8" font-size="16">Partes com manifesto SHA-256.</text>
+      <rect x="24" y="250" width="181" height="28" rx="14" fill="#3d3022"/><text x="39" y="269" fill="#ffbd78" font-size="13">Verificação de integridade</text>
+    </g>
+    <g transform="translate(800,128)">
+      <rect width="352" height="302" rx="20" fill="#25272e" stroke="#383b45"/>
+      <rect x="24" y="24" width="52" height="52" rx="14" fill="url(#orange)"/>
+      <path d="m54 34-17 21h12l-3 14 18-22H52z" fill="none" stroke="#231a12" stroke-width="3" stroke-linejoin="round"/>
+      <text x="24" y="116" fill="#fff" font-size="25" font-weight="700">Automatizar</text>
+      <text x="24" y="148" fill="#b9bdc8" font-size="16">Dois cliques no Finder</text>
+      <text x="24" y="191" fill="#e1e3e8" font-size="16">Extração sem abrir a janela.</text>
+      <text x="24" y="219" fill="#e1e3e8" font-size="16">Diálogo quando precisar de senha.</text>
+      <rect x="24" y="250" width="197" height="28" rx="14" fill="#3d3022"/><text x="39" y="269" fill="#ffbd78" font-size="13">Ativação nas configurações</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test-and-build:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Swift tests
+        run: swift test --build-system native --disable-sandbox
+      - name: Extraction integration tests
+        run: python3 scripts/test-extraction.py
+      - name: Compression integration tests
+        run: python3 scripts/test-compression.py
+      - name: Build and validate both architectures
+        run: ./scripts/package-release.sh
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: MacRar-builds
+          path: dist/release/
+          if-no-files-found: error
+          retention-days: 7

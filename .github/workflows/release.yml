@@ -1,0 +1,40 @@
+name: Build release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag matching the app version, for example v2.1.0
+        type: string
+        required: true
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: macos-15
+    timeout-minutes: 25
+    env:
+      RELEASE_TAG: ${{ inputs.tag }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ inputs.tag }}
+          persist-credentials: false
+      - name: Validate version
+        shell: bash
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' scripts/Info.plist)
+          [[ "$RELEASE_TAG" == "v$VERSION" ]]
+      - name: Tests
+        run: |
+          swift test --build-system native --disable-sandbox
+          python3 scripts/test-extraction.py
+          python3 scripts/test-compression.py
+      - name: Package both architectures
+        run: ./scripts/package-release.sh
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$RELEASE_TAG" dist/release/*.zip dist/release/SHA256SUMS.txt \
+            --verify-tag --draft --generate-notes --title "MacRar ${RELEASE_TAG#v}"

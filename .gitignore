@@ -1,0 +1,12 @@
+.build/
+dist/
+.DS_Store
+.swiftpm/
+Assets/AppIcon.iconset/
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
+*.dSYM/
+*.xcresult/

@@ -1,0 +1,48 @@
+name: Relatar um problema
+description: Algo não está funcionando como esperado.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Não inclua senhas, arquivos pessoais ou dados sensíveis. Vulnerabilidades devem ser relatadas de forma privada; consulte SECURITY.md."
+  - type: input
+    id: version
+    attributes:
+      label: Versão do MacRar
+      placeholder: "2.1.0"
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: Versão do macOS
+      placeholder: "macOS 15.7"
+    validations:
+      required: true
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: Arquitetura
+      options:
+        - Apple Silicon (arm64)
+        - Intel (x86_64)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir
+      description: "Informe formato, operação, modo de extração e passos. Use exemplos sem dados pessoais."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado e resultado observado
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Mensagem de erro e capturas
