@@ -7,7 +7,7 @@ mkdir -p "$RELEASE"
 for ARCH in arm64 x86_64; do
     ./scripts/build-app.sh "$ARCH" "$PWD/dist/$ARCH"
     APP="$PWD/dist/$ARCH/MacRar.app"
-    lipo -verify_arch "$ARCH" "$APP/Contents/MacOS/MacRar"
+    lipo "$APP/Contents/MacOS/MacRar" -verify_arch "$ARCH"
     codesign --verify --deep --strict "$APP"
     /usr/bin/ditto -c -k --sequesterRsrc --keepParent "$APP" "$RELEASE/MacRar-$VERSION-$ARCH.zip"
 done
